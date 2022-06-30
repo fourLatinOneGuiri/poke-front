@@ -1,0 +1,8 @@
+.nav-link {
+  color: #ffcb05;
+  display: flex;
+  align-content: flex-end;
+}
+.navbar-nav {
+  align-items: flex-end;
+}

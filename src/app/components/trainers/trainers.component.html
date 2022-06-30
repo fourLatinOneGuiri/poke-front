@@ -1,0 +1,87 @@
+<div class="container">
+  <h2 class="show display-6" (click)="createTrainerForm()">
+    Create New Trainer
+  </h2>
+  <div class="container p-2">
+    <div class="row">
+      <div class="column">
+        <form *ngIf="isCreateTrainerEnabled">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              [(ngModel)]="name"
+              name="name"
+              type="text"
+              class="form-control"
+              id="name"
+              aria-describedby="emailHelp"
+              placeholder="name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input
+              [(ngModel)]="age"
+              name="age"
+              type="text"
+              class="form-control"
+              id="age"
+              placeholder="age"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="hobby">Hobby</label>
+            <input
+              [(ngModel)]="hobby"
+              name="hobby"
+              type="text"
+              class="form-control"
+              id="hobby"
+              placeholder="hobby"
+            />
+          </div>
+
+          <button
+            (click)="addTrainer()"
+            type="submit"
+            class="btn btn-dark my-2"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br />
+  <hr />
+  <h2 class="show" (click)="showTrainerForm()">Trainers</h2>
+
+  <table *ngIf="isShowTrainerEnabled" class="table table-hover">
+    <thead class="table-dark text-center">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Hobby</th>
+        <th scope="col">Photo</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let trainer of trainerList">
+      <tr class="text-center align-middle">
+        <td>{{ trainer.name }}</td>
+        <td>{{ trainer.age }}</td>
+        <td>{{ trainer.hobby }}</td>
+        <td>
+          <img
+            width="150"
+            height="150"
+            class="img-fluid"
+            src="{{ trainer.photo }}"
+            alt="trainerPhoto"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

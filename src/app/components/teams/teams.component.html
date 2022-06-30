@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Teams</h2>
+
+  <table class="table table-hover text-center">
+    <thead class="table-dark">
+      <tr class="">
+        <th scope="row">T Name</th>
+        <th scope="row">P name</th>
+        <th scope="row">P photo</th>
+        <th scope="row">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let trainer of trainerList">
+      <tr
+        class="text-center align-middle"
+        *ngFor="let pokemon of trainer.pokemonList"
+      >
+        <td>{{ trainer.name }}</td>
+        <td>{{ pokemon.name }}</td>
+        <td>{{ pokemon.photo }}</td>
+        <td>
+          <button (click)="deletePokemon(trainer.id, pokemon.name)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

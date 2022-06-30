@@ -1,0 +1,9 @@
+.container {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(236, 228, 228, 0.195);
+  background-image: url("https://www.pokemon.co.jp/ex/1000pokemon/common/images/footerImgSp.png");
+  /* background-image: url("https://unite.pokemon.com/images/footer/snorlax.png"); */
+  background-repeat: repeat-x;
+  background-position: inherit;
+}
